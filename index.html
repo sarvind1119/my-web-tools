@@ -1,62 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Tools</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Web Tools</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .card {
+      transition: all 0.3s ease-in-out;
+    }
+    footer {
+      background: var(--bs-secondary-bg);
+      color: var(--bs-body-color);
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 3rem;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid px-4 d-flex justify-content-between align-items-center">
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
 
-    <!-- Left logo -->
+    <!-- Left Logo -->
     <div class="d-flex align-items-center">
       <img src="https://cdnbbsr.s3waas.gov.in/s3dcf6070a4ab7f3afbfd2809173e0824b/uploads/2024/10/20241009217618493.svg"
-           alt="Left Logo" width="45" height="45" class="me-3">
-      <a class="navbar-brand mb-0 h1" href="#">My Web Tools</a>
+           alt="Left Logo" width="100" height="40" class="me-2">
     </div>
 
-    <!-- Navbar links -->
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-      <ul class="navbar-nav">
+    <!-- Center Heading -->
+    <div class="text-center flex-grow-1">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+      <a class="navbar-brand mb-0 h1 fw-bold" href="#" style="font-family: 'Poppins', sans-serif;">My Web Tools</a>
+    </div>
+
+    <!-- Right Nav and Logo -->
+    <div class="d-flex align-items-center">
+      <ul class="navbar-nav me-3 d-none d-lg-flex">
         <li class="nav-item"><a class="nav-link" href="#apps">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
-    </div>
-
-    <!-- Right logo -->
-    <div class="d-flex align-items-center">
-      <img src="https://www.lbsnaa.gov.in/admin_assets/images/logo.png"
-           alt="Right Logo" width="45" height="45" class="ms-3 d-none d-md-block">
+      <button id="themeToggle" class="btn btn-outline-light me-2"><i class="bi bi-moon-fill"></i></button>
+      <img src="https://www.lbsnaa.gov.in/admin_assets/images/logo.png" alt="Right Logo" width="180" height="60">
     </div>
 
   </div>
 </nav>
 
-<!-- About Section -->
+
+<!-- Hero Banner -->
+<section class="bg-primary text-white text-center py-5">
+  <div class="container">
+    <h1 class="display-4">Welcome to My Web Tools</h1>
+    <p class="lead">A suite of tools crafted for productivity and playfulness.</p>
+  </div>
+</section>
+
+<!-- About -->
 <section id="about" class="container my-5">
-    <h2>About</h2>
-    <p>This page hosts a collection of small web apps built for productivity and convenience.</p>
+  <h2>About</h2>
+  <p>This collection of web tools is designed to simplify tasks and improve productivity. Each tool is independently developed and hosted to serve specific needs.</p>
 </section>
 
-<!-- Apps Section -->
+<!-- Web Apps Grid -->
 <section id="apps" class="container my-5">
-    <h2>Web Apps</h2>
-    <ul>
-        <li><a href="https://scanned-pdf-translator-production.up.railway.app/" target="_blank">Scanned PDF Translator</a></li>
-        <li><a href="https://transcript-and-translate-lbs.streamlit.app/" target="_blank">Transcript & Translate Tool</a></li>
-    </ul>
+  <h2>Available Web Apps</h2>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3">
+
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title"><i class="bi bi-file-earmark-translation"></i> Scanned PDF Translator</h5>
+          <p class="card-text">Translate scanned PDFs like a wizard with questionable handwriting.</p>
+          <a href="https://scanned-pdf-translator-production.up.railway.app/" target="_blank" class="btn btn-primary">Launch</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title"><i class="bi bi-mic-fill"></i> Transcript & Translate Tool</h5>
+          <p class="card-text">Get transcripts/translations, summaries, etc. for your meetingsfiles.</p>
+          <a href="https://transcript-and-translate-lbs.streamlit.app/" target="_blank" class="btn btn-primary">Launch</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional cards can be added here -->
+
+  </div>
 </section>
 
-<!-- Contact Section -->
+<!-- Contact -->
 <section id="contact" class="container my-5">
-    <h2>Contact</h2>
-    <p>Feel free to reach out to me via LBSNAA communication channels.</p>
+  <h2>Contact</h2>
+  <p>For feedback, queries, or collaborations, please get in touch via institutional channels or the feedback form (coming soon).</p>
 </section>
 
+<!-- Footer -->
+<footer>
+  <p class="mb-0">© 2025 My Web Tools. Built with Bootstrap and passion.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Theme toggle with persistence
+  const html = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+  const storedTheme = localStorage.getItem('theme');
+  if (storedTheme) {
+    html.setAttribute('data-bs-theme', storedTheme);
+    themeToggle.innerHTML = storedTheme === 'dark' ? '<i class="bi bi-sun-fill"></i>' : '<i class="bi bi-moon-fill"></i>';
+  }
+  themeToggle.addEventListener('click', function () {
+    const isDark = html.getAttribute('data-bs-theme') === 'dark';
+    const newTheme = isDark ? 'light' : 'dark';
+    html.setAttribute('data-bs-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    this.innerHTML = newTheme === 'dark' ? '<i class="bi bi-sun-fill"></i>' : '<i class="bi bi-moon-fill"></i>';
+  });
+</script>
 </body>
 </html>
